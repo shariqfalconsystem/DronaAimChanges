@@ -159,7 +159,7 @@ const VehicleTripsTable = ({
         width: '100%',
       }}
     >
-      <Grid container sx={{ height: '40px' }}>
+      <Grid container>
         <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center', p: 2 }}>
           <Typography variant="body1">Completed Trips</Typography>
         </Grid>
@@ -358,23 +358,23 @@ const VehicleTripsTable = ({
                     sx={
                       index % 2
                         ? {
-                            background: '#BFD1D9',
-                            color: row.isOrphaned ? '#a1a1a1' : 'inherit',
-                            cursor: row.isOrphaned ? 'default' : 'pointer',
-                            '&:hover': {
-                              backgroundColor: row.isOrphaned ? '#113f8a' : '#a8d1e3',
-                            },
-                            textAlign: 'center',
-                          }
+                          background: '#BFD1D9',
+                          color: row.isOrphaned ? '#a1a1a1' : 'inherit',
+                          cursor: row.isOrphaned ? 'default' : 'pointer',
+                          '&:hover': {
+                            backgroundColor: row.isOrphaned ? '#113f8a' : '#a8d1e3',
+                          },
+                          textAlign: 'center',
+                        }
                         : {
-                            background: '#fff',
-                            color: row.isOrphaned ? '#a1a1a1' : 'inherit',
-                            cursor: row.isOrphaned ? 'default' : 'pointer',
-                            '&:hover': {
-                              backgroundColor: row.isOrphaned ? '#f0f0f0' : '#d9dbde',
-                            },
-                            textAlign: 'center',
-                          }
+                          background: '#fff',
+                          color: row.isOrphaned ? '#a1a1a1' : 'inherit',
+                          cursor: row.isOrphaned ? 'default' : 'pointer',
+                          '&:hover': {
+                            backgroundColor: row.isOrphaned ? '#f0f0f0' : '#d9dbde',
+                          },
+                          textAlign: 'center',
+                        }
                     }
                     onClick={() => {
                       if (row.isOrphaned) {
@@ -413,7 +413,7 @@ const VehicleTripsTable = ({
                     <TableCell sx={{ whiteSpace: 'nowrap', textAlign: 'center' }}>
                       {row.startLocalizedTsInMilliSeconds
                         ? formatLocalizedDateTime(row.startLocalizedTsInMilliSeconds, row.startTzAbbreviation)
-                            ?.dateWithTmz
+                          ?.dateWithTmz
                         : formatUserDateTime(row.startDate)?.date || 'NA'}
                     </TableCell>
                     <TableCell sx={{ whiteSpace: 'nowrap', textAlign: 'center' }}>

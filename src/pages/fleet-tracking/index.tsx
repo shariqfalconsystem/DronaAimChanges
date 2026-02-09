@@ -175,9 +175,19 @@ const FleetTracking = () => {
         <LoadingScreen />
       ) : (
         <Container maxWidth={false} disableGutters sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-          <Grid container sx={{ flexGrow: 1, display: 'flex', flexDirection: 'row', height: '100%' }}>
-            <Grid item xs={3} sx={{ height: '100%', position: 'relative', overflowY: 'auto' }}>
-              <Box sx={{ height: '100vh' }}>
+          <Grid container sx={{ flexGrow: 1, height: '100%' }}>
+            <Grid
+              item
+              xs={12}
+              md={3}
+              sx={{
+                height: { xs: 'auto', md: '100%' },
+                position: 'relative',
+                overflowY: 'auto',
+                borderBottom: { xs: '1px solid #ccc', md: 'none' },
+              }}
+            >
+              <Box sx={{ height: { xs: '50vh', md: '100vh' } }}>
                 {selectedVehicle ? (
                   <LiveTrackingDetails
                     selectedVehicle={selectedVehicle}
@@ -205,7 +215,7 @@ const FleetTracking = () => {
                 )}
               </Box>
             </Grid>
-            <Grid item xs={9} sx={{ padding: '0 !important', height: '100%' }}>
+            <Grid item xs={12} md={9} sx={{ padding: '0 !important', height: { xs: '50vh', md: '100%' } }}>
               <Box sx={{ height: '100%' }}>
                 <MapContainerComponent
                   selectedVehicle={selectedVehicle}

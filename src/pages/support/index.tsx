@@ -39,9 +39,6 @@ const SupportScreen = () => {
           margin: 'auto',
           padding: 3,
           background: '#fff',
-          display: 'flex',
-          flexDirection: 'column',
-          height: '90vh',
         }}
       >
         <Typography
@@ -52,67 +49,106 @@ const SupportScreen = () => {
         >
           Support
         </Typography>
-        <Card sx={{ backgroundColor: '#F1F5F9', boxShadow: 'none', px: 4 }}>
-          <CardContent sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <Box>
-              <Typography variant="h5" sx={{ color: '#334155', fontWeight: 'medium', mb: 8, fontSize: '1.2rem' }}>
-                <span
-                  style={{
-                    textDecoration: 'underline',
-                    textUnderlineOffset: '10px',
-                    textDecorationThickness: '3px',
-                  }}
-                >
-                  Please
-                </span>{' '}
-                contact us for any help and support at
-              </Typography>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 1, mt: 4 }}>
-                <Email sx={{ color: '#64748B', mr: 1 }} />
+        <Card sx={{ backgroundColor: '#F1F5F9', boxShadow: 'none', px: { xs: 2, md: 4 } }}>
+          <CardContent>
+            <Grid container spacing={4} alignItems="center">
+              <Grid item xs={12} md={6}>
                 <Typography
-                  variant="body2"
-                  sx={{ color: '#334155', fontSize: '1.1rem', textDecoration: 'underline', cursor: 'pointer' }}
-                  onClick={toggleModal}
-                >
-                  <a>{environment.supportEmail}</a>
-                </Typography>
-              </Box>
-              <Box sx={{ display: 'flex', alignItems: 'center', mt: 4 }}>
-                <Phone sx={{ color: '#64748B', mr: 1 }} />
-                <Typography variant="body2" sx={{ color: '#334155', fontSize: '1.1rem' }}>
-                  +1(817)-865-5261
-                </Typography>
-              </Box>
-              <Box sx={{ display: 'flex', alignItems: 'center', mt: 4 }}>
-                <Language sx={{ color: '#64748B', mr: 1 }} />
-                <Typography
-                  variant="body2"
+                  variant="h5"
                   sx={{
                     color: '#334155',
-                    fontSize: '1.1rem',
-                    textDecoration: 'underline',
-                    cursor: 'pointer',
-                    '& a': {
-                      color: 'blue',
-                      textDecorationColor: 'blue',
-                    },
-                    '& a:active': {
-                      color: 'blue',
-                    },
+                    fontWeight: 'medium',
+                    mb: 4,
+                    fontSize: { xs: '1rem', md: '1.2rem' },
+                    textAlign: { xs: 'center', md: 'left' },
                   }}
                 >
-                  <a href="https://dronaaim.ai/" target="_blank" rel="noopener noreferrer">
-                    https://dronaaim.ai/
-                  </a>
+                  <span
+                    style={{
+                      textDecoration: 'underline',
+                      textUnderlineOffset: '10px',
+                      textDecorationThickness: '3px',
+                    }}
+                  >
+                    Please
+                  </span>{' '}
+                  contact us for any help and support at
                 </Typography>
-              </Box>
-            </Box>
-            <Box
-              component="img"
-              src={SupportIllustration}
-              alt="Support illustration"
-              sx={{ width: 450, height: 250 }}
-            />
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    mb: 1,
+                    mt: 4,
+                    justifyContent: { xs: 'center', md: 'flex-start' },
+                  }}
+                >
+                  <Email sx={{ color: '#64748B', mr: 1 }} />
+                  <Typography
+                    variant="body2"
+                    sx={{ color: '#334155', fontSize: '1.1rem', textDecoration: 'underline', cursor: 'pointer' }}
+                    onClick={toggleModal}
+                  >
+                    <a>{environment.supportEmail}</a>
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    mt: 4,
+                    justifyContent: { xs: 'center', md: 'flex-start' },
+                  }}
+                >
+                  <Phone sx={{ color: '#64748B', mr: 1 }} />
+                  <Typography variant="body2" sx={{ color: '#334155', fontSize: '1.1rem' }}>
+                    +1(817)-865-5261
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    mt: 4,
+                    justifyContent: { xs: 'center', md: 'flex-start' },
+                  }}
+                >
+                  <Language sx={{ color: '#64748B', mr: 1 }} />
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: '#334155',
+                      fontSize: '1.1rem',
+                      textDecoration: 'underline',
+                      cursor: 'pointer',
+                      '& a': {
+                        color: 'blue',
+                        textDecorationColor: 'blue',
+                      },
+                      '& a:active': {
+                        color: 'blue',
+                      },
+                    }}
+                  >
+                    <a href="https://dronaaim.ai/" target="_blank" rel="noopener noreferrer">
+                      https://dronaaim.ai/
+                    </a>
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center' }}>
+                <Box
+                  component="img"
+                  src={SupportIllustration}
+                  alt="Support illustration"
+                  sx={{
+                    maxWidth: '100%',
+                    height: 'auto',
+                    width: { xs: '100%', md: 450 },
+                  }}
+                />
+              </Grid>
+            </Grid>
           </CardContent>
         </Card>
       </Grid>
