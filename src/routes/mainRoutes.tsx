@@ -414,7 +414,18 @@ export default function MainRoutes() {
     if (userRole === 'admin') return null;
 
     return (
-      <IconButton color="inherit" onClick={handleNavigateToNotification} disabled={isLoading}>
+      <IconButton
+        sx={{
+          color: '#0A4D7C',
+          border: isMobile ? 'none' : '1px solid #D0D0D0',
+          borderRadius: isMobile ? '0' : '50%',
+          '&:hover': {
+            backgroundColor: '#F5F5F5',
+          }
+        }}
+        onClick={handleNavigateToNotification}
+        disabled={isLoading}
+      >
         {isNotifications ? (
           <img src={NotificationBell} width={25} height={25} alt="Notifications" />
         ) : (
@@ -430,9 +441,15 @@ export default function MainRoutes() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="fixed"
+        // sx={{
+        //   background: 'linear-gradient(90deg, #FFFFFF 0%, #D4EAFF 25%, #6D8FB0 50.02%, #3F5C78 74.92%, #2C3E50 100%)',
+        //   zIndex: (theme) => theme.zIndex.drawer + 1,
+        // }}
         sx={{
-          background: 'linear-gradient(90deg, #FFFFFF 0%, #D4EAFF 25%, #6D8FB0 50.02%, #3F5C78 74.92%, #2C3E50 100%)',
+          background: '#FFFFFF',
           zIndex: (theme) => theme.zIndex.drawer + 1,
+          boxShadow: '0 2px 4px rgba(0,0,0,0.08)',
+          borderBottom: '1px solid #E0E0E0',
         }}
       >
         <Toolbar>
@@ -442,7 +459,7 @@ export default function MainRoutes() {
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ mr: 2, color: '#3F5C78' }}
+              sx={{ mr: 2, color: '#0A4D7C' }}
             >
               <MdMenu />
             </IconButton>
@@ -468,17 +485,18 @@ export default function MainRoutes() {
             sx={{
               display: 'flex',
               alignItems: 'center',
-              borderRadius: '30px',
+              border: isMobile ? 'none' : '1px solid #D0D0D0',
+              borderRadius: isMobile ? '0' : '50px',
               padding: '6px 12px',
               marginLeft: 2,
               cursor: 'pointer',
               transition: 'background-color 0.3s ease, color 0.3s ease',
-              color: 'white',
+              color: '#0A4D7C',
               '&:hover': {
-                backgroundColor: '#ffffff',
-                color: 'black',
+                backgroundColor: '#F5F5F5',
+                color: '#0A4D7C',
                 '& .text-content': {
-                  color: 'black',
+                  color: '#0A4D7C',
                 },
               },
             }}
@@ -494,7 +512,7 @@ export default function MainRoutes() {
                 |
               </Typography>
               <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                <Typography variant="body2" fontWeight="600" sx={{ color: '#00a650' }}>
+                <Typography variant="body2" fontWeight="600" sx={{ color: '#7FD957' }}>
                   {userData?.selectedRole?.name || userData?.selectedRole?.orgName || 'DronaAIm'}
                 </Typography>
                 <Typography variant="caption" sx={{ fontSize: '0.75rem' }}>
@@ -600,7 +618,7 @@ export default function MainRoutes() {
           </Popover>
 
           <Tooltip title="Logout" placement="bottom" arrow>
-            <IconButton edge="end" color="inherit" onClick={handleLogout} disabled={isLoading}>
+            <IconButton edge="end" sx={{ color: '#0A4D7C' }} onClick={handleLogout} disabled={isLoading}>
               <IoIosLogOut />
             </IconButton>
           </Tooltip>

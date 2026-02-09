@@ -211,7 +211,7 @@ const SegmentControlDesktop = ({
             <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
               <FilterButton onClick={handleOpenColumnMenu}>
                 <IconButton sx={{ padding: 0, height: '24px', color: 'inherit' }}>
-                  <MdViewColumn size={20} />
+                  <MdViewColumn size={20} /> 
                 </IconButton>
                 <Typography variant="body2" sx={{ marginLeft: '4px', fontSize: '14px' }}>
                   Columns

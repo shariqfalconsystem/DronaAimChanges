@@ -4,25 +4,26 @@ import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#3F5C78",
-      light: "##ECF0F1",
-      dark: "#2C3E50",
+      main: "#0A4D7C", // Brand navy blue
+      light: "#E8F4FD",
+      dark: "#073A5E",
     },
     secondary: {
-      main: "#E6F1FB",
-      light: "#ECF0F1",
-      dark: "#D9DEE4",
+      main: "#7FD957", // Brand green accent
+      light: "#B8F090",
+      dark: "#5CB82E",
     },
     background: {
-      default: "#ECF0F1",
-      paper: "#FCFDFD",
+      default: "#F8F9FA",
+      paper: "#FFFFFF",
     },
     action: {
-      active: "#1f3038",
-      hover: "#1f3038",
+      active: "#0A4D7C",
+      hover: "#E8F4FD",
     },
     text: {
-      primary: "#000",
+      primary: "#2C3E50",
+      secondary: "#546E7A",
     },
   },
   typography: {
