@@ -21,16 +21,16 @@ const HelpCenterHeader: React.FC<HelpCenterHeaderProps> = ({ onSearchChange, sea
         alignItems: 'center',
       }}
     >
-      <Grid container spacing={2} alignItems="center" justifyContent="space-between">
-        <Grid item display="flex" alignItems="center" justifyContent="center">
-          <Typography variant="h6" sx={{ ml: 3 }}>
+      <Grid container spacing={2} alignItems="center" px={{ xs: 2, md: 3 }}>
+        <Grid item xs={12} sm="auto" display="flex" alignItems="center">
+          <Typography variant="h6">
             Help Center
           </Typography>
           <IconButton onClick={() => window.location.reload()}>
             <RiRefreshLine />
           </IconButton>
         </Grid>
-        <Grid item sx={{ width: '350px', mr: 3 }}>
+        <Grid item xs={12} sm={true} sx={{ maxWidth: { sm: 400 }, ml: { sm: 'auto' } }}>
           {isLanding && (
             <SearchInput
               placeholder="Search"
@@ -48,7 +48,6 @@ const HelpCenterHeader: React.FC<HelpCenterHeaderProps> = ({ onSearchChange, sea
             />
           )}
         </Grid>
-        <Grid></Grid>
       </Grid>
     </Box>
   );

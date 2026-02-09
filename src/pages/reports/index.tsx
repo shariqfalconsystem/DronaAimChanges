@@ -218,129 +218,132 @@ const FmReportList = () => {
       ) : (
         <>
           <Box
-            mb={4}
             sx={{
               boxShadow: '0px 4px 4px 0px #00000040',
               bgcolor: '#fff',
               py: 1.5,
               px: 2,
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              gap: 1,
+              mb: 4,
             }}
           >
-            <Box display="flex" alignItems="center" gap={1}>
-              <Typography sx={{ fontSize: '16px', fontWeight: 500, color: '#1F2937' }}>Reports</Typography>
-              <IconButton size="small" onClick={handleRefresh} sx={{ padding: '4px' }}>
-                <RiRefreshLine />
-              </IconButton>
-            </Box>
-
-            <TextField
-              size="small"
-              placeholder="Search "
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              sx={{ mx: 2, flex: 1, maxWidth: 500 }}
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchIcon sx={{ fontSize: 20, color: '#9CA3AF' }} />
-                  </InputAdornment>
-                ),
-              }}
-            />
-
-            <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1 }}>
-              {/* Create Report Button */}
-              <Box
-                sx={{
-                  position: 'relative',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  transition: 'transform 0.7s ease',
-                  transform: hoveredCustomize ? 'translateX(-200px)' : 'translateX(0)',
-                }}
-                // Add mouse events to the container to keep hover text visible
-                onMouseEnter={() => setHoveredCreate(true)}
-                onMouseLeave={() => setHoveredCreate(false)}
-              >
-                <Box
-                  className="hover-text"
-                  sx={{
-                    position: 'absolute',
-                    top: '50%',
-                    right: 0,
-                    opacity: hoveredCreate ? 1 : 0,
-                    transform: 'translateY(-50%)',
-                    transition: 'opacity 0.9s ease',
-                    color: 'white',
-                    fontWeight: 400,
-                    whiteSpace: 'nowrap',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    backgroundColor: '#247FAD',
-                    borderRadius: '24px',
-                    height: 48,
-                    padding: '0 16px',
-                    minWidth: 200,
-                    boxShadow: 1,
-                    zIndex: 2,
-                    pointerEvents: 'none', // Allows clicking through the hover text
-                  }}
-                >
-                  Create a new report
+            <Grid container spacing={2} alignItems="center">
+              <Grid item xs={12} sm="auto">
+                <Box display="flex" alignItems="center" gap={1}>
+                  <Typography sx={{ fontSize: '16px', fontWeight: 500, color: '#1F2937' }}>Reports</Typography>
+                  <IconButton size="small" onClick={handleRefresh} sx={{ padding: '4px' }}>
+                    <RiRefreshLine />
+                  </IconButton>
                 </Box>
-                <IconButton sx={{ padding: '8px', cursor: 'pointer' }} onClick={handleCreateReport}>
-                  <RiAddCircleLine size={40} />
-                </IconButton>
-              </Box>
+              </Grid>
 
-              {/* Customize Button */}
-              <Box
-                sx={{
-                  position: 'relative',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  transition: 'transform 0.9s ease',
-                }}
-                onMouseEnter={() => setHoveredCustomize(true)}
-                onMouseLeave={() => setHoveredCustomize(false)}
-              >
-                <Box
-                  className="hover-text"
-                  sx={{
-                    position: 'absolute',
-                    top: '50%',
-                    right: 0,
-                    opacity: hoveredCustomize ? 1 : 0,
-                    transform: 'translateY(-50%)',
-                    transition: 'opacity 0.7s ease',
-                    color: 'white',
-                    fontWeight: 400,
-                    whiteSpace: 'nowrap',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    backgroundColor: '#247FAD',
-                    borderRadius: '24px',
-                    height: 48,
-                    padding: '0 16px',
-                    minWidth: 200,
-                    boxShadow: 1,
-                    zIndex: 2,
-                    pointerEvents: 'none',
+              <Grid item xs={12} sm={true}>
+                <TextField
+                  size="small"
+                  placeholder="Search "
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  sx={{ width: '100%', maxWidth: { sm: 500 } }}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <SearchIcon sx={{ fontSize: 20, color: '#9CA3AF' }} />
+                      </InputAdornment>
+                    ),
                   }}
-                >
-                  Customize this page
+                />
+              </Grid>
+
+              <Grid item xs={12} sm="auto">
+                <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 1, justifyContent: { xs: 'center', sm: 'flex-end' } }}>
+                  {/* Create Report Button */}
+                  <Box
+                    sx={{
+                      position: 'relative',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      transition: 'transform 0.7s ease',
+                      transform: hoveredCustomize ? { xs: 'none', md: 'translateX(-200px)' } : 'translateX(0)',
+                    }}
+                    onMouseEnter={() => setHoveredCreate(true)}
+                    onMouseLeave={() => setHoveredCreate(false)}
+                  >
+                    <Box
+                      className="hover-text"
+                      sx={{
+                        position: 'absolute',
+                        top: '50%',
+                        right: 0,
+                        opacity: hoveredCreate ? 1 : 0,
+                        transform: 'translateY(-50%)',
+                        transition: 'opacity 0.9s ease',
+                        color: 'white',
+                        fontWeight: 400,
+                        whiteSpace: 'nowrap',
+                        display: { xs: 'none', md: 'flex' },
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: '#247FAD',
+                        borderRadius: '24px',
+                        height: 48,
+                        padding: '0 16px',
+                        minWidth: 200,
+                        boxShadow: 1,
+                        zIndex: 2,
+                        pointerEvents: 'none',
+                      }}
+                    >
+                      Create a new report
+                    </Box>
+                    <IconButton sx={{ padding: '8px', cursor: 'pointer' }} onClick={handleCreateReport}>
+                      <RiAddCircleLine size={40} />
+                    </IconButton>
+                  </Box>
+
+                  {/* Customize Button */}
+                  <Box
+                    sx={{
+                      position: 'relative',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      transition: 'transform 0.9s ease',
+                    }}
+                    onMouseEnter={() => setHoveredCustomize(true)}
+                    onMouseLeave={() => setHoveredCustomize(false)}
+                  >
+                    <Box
+                      className="hover-text"
+                      sx={{
+                        position: 'absolute',
+                        top: '50%',
+                        right: 0,
+                        opacity: hoveredCustomize ? 1 : 0,
+                        transform: 'translateY(-50%)',
+                        transition: 'opacity 0.7s ease',
+                        color: 'white',
+                        fontWeight: 400,
+                        whiteSpace: 'nowrap',
+                        display: { xs: 'none', md: 'flex' },
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: '#247FAD',
+                        borderRadius: '24px',
+                        height: 48,
+                        padding: '0 16px',
+                        minWidth: 200,
+                        boxShadow: 1,
+                        zIndex: 2,
+                        pointerEvents: 'none',
+                      }}
+                    >
+                      Customize this page
+                    </Box>
+                    <IconButton sx={{ padding: '8px', cursor: 'pointer' }} onClick={handleDialogOpen}>
+                      <img src={settings} alt="Settings Icon" />
+                    </IconButton>
+                  </Box>
                 </Box>
-                <IconButton sx={{ padding: '8px', cursor: 'pointer' }} onClick={handleDialogOpen}>
-                  <img src={settings} alt="Settings Icon" />
-                </IconButton>
-              </Box>
-            </Box>
+              </Grid>
+            </Grid>
           </Box>
 
           <Container
