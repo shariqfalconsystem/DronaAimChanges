@@ -65,13 +65,13 @@ const VehicleDetails: React.FC = () => {
           ...(filterCriteria?.fromDate && { fromDate: filterCriteria?.fromDate }),
           ...(sortParams?.key
             ? {
-                sortKey: sortParams.key,
-                sortOrder: sortParams.order,
-              }
+              sortKey: sortParams.key,
+              sortOrder: sortParams.order,
+            }
             : {
-                sortKey: defaultSortParams.key,
-                sortOrder: defaultSortParams.order,
-              }),
+              sortKey: defaultSortParams.key,
+              sortOrder: defaultSortParams.order,
+            }),
           ...(searchParams && { ...searchParams }),
           ...(searchParams.startDate && { fromDate: searchParams.startDate }),
           ...(searchParams.endDate && { toDate: searchParams.endDate }),
@@ -231,7 +231,7 @@ const VehicleDetails: React.FC = () => {
           </Grid>
         </Grid>
         <Grid container spacing={2} sx={{ marginTop: 1 }}>
-          <Grid item md={12} id="vehicle-trip-details" sx={{ width: '80vw' }}>
+          <Grid item md={12} id="vehicle-trip-details" sx={{ width: '100%' }}>
             <VehicleTripDetails
               tripsInformation={vehicleTripsInformation}
               onPageChange={handlePageChange}

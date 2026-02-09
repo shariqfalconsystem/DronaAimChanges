@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import {
+  Grid,
   Box,
   CircularProgress,
   Divider,
@@ -231,56 +232,61 @@ const HelpCenter = () => {
       {!selectedTopic && (
         <HelpCenterHeader onSearchChange={handleSearchChange} searchText={searchText} isLanding={true} />
       )}
-      <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: '#F5F5F5', alignItems: 'flex-start', mt: 1 }}>
-        <Box
+      <Grid container rowSpacing={{ xs: 2, md: 2 }} columnSpacing={2} alignItems="flex-start" sx={{ bgcolor: '#F5F5F5', mt: 1, minHeight: '100vh', px: { xs: 1, md: 2 } }}>
+        <Grid
+          item
+          xs={12}
+          md={3}
+          lg={2.5}
           sx={{
-            position: 'sticky',
-            top: 80,
-            alignSelf: 'flex-start',
-            backgroundColor: '#DFE8F0',
-            p: 3,
-            borderRadius: 2,
-            ml: 2,
-            mt: 4,
-            maxHeight: 'calc(100vh - 100px)',
-            overflowY: 'auto',
-            flexShrink: 0,
-            width: '240px',
+            position: { md: 'sticky' },
+            top: { md: 80 },
+            mt: { xs: 1, md: 4 },
           }}
         >
-          <List>
-            {sidebarItems.map((item, index) => (
-              <ListItem key={index} disablePadding>
-                <ListItemButton
-                  selected={activeTab === item.text}
-                  sx={{
-                    mb: 2,
-                    borderRadius: 2,
-                    '&.Mui-selected': {
-                      bgcolor: '#247FAD',
-                      color: '#fff',
-                      '&:hover': { bgcolor: '#1c6d96' },
-                    },
-                    '&:hover': { bgcolor: 'grey.100' },
-                  }}
-                  onClick={() => {
-                    setActiveTab(item.text);
-                    setSelectedTopic(null);
-                  }}
-                >
-                  <ListItemIcon sx={{ color: 'inherit', minWidth: 40 }}>{item.icon}</ListItemIcon>
-                  <ListItemText
-                    primary={item.text}
-                    primaryTypographyProps={{ fontSize: '0.875rem', fontWeight: 500 }}
-                  />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
-        </Box>
+          <Box
+            sx={{
+              backgroundColor: '#DFE8F0',
+              p: 3,
+              borderRadius: 2,
+              maxHeight: { md: 'calc(100vh - 100px)' },
+              overflowY: 'auto',
+            }}
+          >
+            <List>
+              {sidebarItems.map((item, index) => (
+                <ListItem key={index} disablePadding>
+                  <ListItemButton
+                    selected={activeTab === item.text}
+                    sx={{
+                      mb: 2,
+                      borderRadius: 2,
+                      '&.Mui-selected': {
+                        bgcolor: '#247FAD',
+                        color: '#fff',
+                        '&:hover': { bgcolor: '#1c6d96' },
+                      },
+                      '&:hover': { bgcolor: 'grey.100' },
+                    }}
+                    onClick={() => {
+                      setActiveTab(item.text);
+                      setSelectedTopic(null);
+                    }}
+                  >
+                    <ListItemIcon sx={{ color: 'inherit', minWidth: 40 }}>{item.icon}</ListItemIcon>
+                    <ListItemText
+                      primary={item.text}
+                      primaryTypographyProps={{ fontSize: '0.875rem', fontWeight: 500 }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        </Grid>
 
-        <Box sx={{ flexGrow: 1, minWidth: 0, overflowX: 'auto', ml: 2, mr: 2 }}>
-          <Paper sx={{ minWidth: '960px', width: '80%', borderRadius: 4, boxShadow: 1, p: 4, ml: 4, mt: 4 }}>
+        <Grid item xs={12} md={9} lg={9.5} sx={{ mt: { xs: 0, md: 4 } }}>
+          <Paper sx={{ width: '100%', borderRadius: 4, boxShadow: 1, p: { xs: 2, md: 4 }, mb: 4 }}>
             {loading ? (
               <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
                 <CircularProgress />
@@ -387,8 +393,8 @@ const HelpCenter = () => {
               </Box>
             )}
           </Paper>
-        </Box>
-      </Box>
+        </Grid>
+      </Grid>
       <ShareDialog
         open={shareDialogOpen}
         onClose={() => {

@@ -183,7 +183,7 @@ const TripsDashboard = ({
         width: '100%',
       }}
     >
-      <Grid container sx={{ height: '40px' }}>
+      <Grid container>
         <Grid item xs={12} md={4} sx={{ display: 'flex', alignItems: 'center', p: 2 }}>
           <Typography variant="body1">COMPLETED TRIPS</Typography>
         </Grid>

@@ -113,7 +113,7 @@ const UnassignedListTable: React.FC<any> = ({
     { label: 'Device Provider', key: 'partnerName', minWidth: '150px' },
     { label: 'Custom Vehicle ID', key: 'customVehicleId', minWidth: '150px' },
     { label: 'IMEI Number', key: 'imeiByDevice', minWidth: '150px' },
-    { label: 'Actions', key: 'actions', minWidth: '100px' },
+    { label: 'Actions', key: 'actions', minWidth: '110px' },
   ];
 
   const handleLinkClick = (e: any, vehicle: any) => {
@@ -158,7 +158,7 @@ const UnassignedListTable: React.FC<any> = ({
   }, [vehicleInformation]);
 
   return (
-    <Box sx={{ maxWidth: '81vw', overflowX: 'auto' }}>
+    <Box sx={{ width: '100%', overflowX: 'auto' }}>
       <TableContainer
         ref={containerRef}
         component={Paper}
@@ -192,22 +192,22 @@ const UnassignedListTable: React.FC<any> = ({
             <TableRow>
               {columns
                 .filter((col) => (!visibleColumns || visibleColumns[col.key] !== false))
-                .map(({ label, key, minWidth }, index) => (
+                .map(({ label, key, minWidth }, index, filteredArray) => (
                   <StyledHeadCell
                     key={key}
                     sx={{
                       width: minWidth,
                       minWidth: minWidth,
-                      position: index === 0 || index === columns.length - 1 ? 'sticky' : 'static',
+                      position: index === 0 || index === filteredArray.length - 1 ? 'sticky' : 'static',
                       left: index === 0 ? 0 : 'auto',
-                      right: index === columns.length - 1 ? 0 : 'auto',
-                      zIndex: index === 0 || index === columns.length - 1 ? 2 : 'auto',
+                      right: index === filteredArray.length - 1 ? 0 : 'auto',
+                      zIndex: index === 0 || index === filteredArray.length - 1 ? 2 : 'auto',
                       backdropFilter: applyBackdropFilter ? 'blur(50px)' : 'none',
-                      background: index === 0 || index === columns.length - 1 ? '#EDF0F5' : 'inherit',
+                      background: index === 0 || index === filteredArray.length - 1 ? '#EDF0F5' : 'inherit',
                       boxShadow:
                         index === 0
                           ? '2px 0 5px rgba(0,0,0,0.1)'
-                          : index === columns.length - 1
+                          : index === filteredArray.length - 1
                             ? '-2px 0 5px rgba(0,0,0,0.1)'
                             : 'none',
                       whiteSpace: 'nowrap',

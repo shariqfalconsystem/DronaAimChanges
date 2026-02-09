@@ -138,7 +138,7 @@ const VehicleListTable: React.FC<any> = ({
     { label: 'Device Provider', key: 'partnerName', hideable: true, minWidth: '150px' },
     { label: 'Custom Vehicle ID', key: 'customVehicleId', hideable: true, minWidth: '150px' },
     { label: 'IMEI Number', key: 'imeiByDevice', hideable: true, minWidth: '150px' },
-    { label: 'Actions', key: 'actions', hideable: false, minWidth: '100px' },
+    { label: 'Actions', key: 'actions', hideable: false, minWidth: '110px' },
   ];
 
 
@@ -183,7 +183,7 @@ const VehicleListTable: React.FC<any> = ({
   }, [vehiclesInformation]);
 
   return (
-    <Box sx={{ maxWidth: '81vw', overflowX: 'auto' }}>
+    <Box sx={{ width: '100%', overflowX: 'auto' }}>
       <TableContainer
         ref={containerRef}
         component={Paper}
@@ -217,16 +217,16 @@ const VehicleListTable: React.FC<any> = ({
             <TableRow>
               {columns
                 .filter((col) => !visibleColumns || visibleColumns[col.key as keyof typeof visibleColumns] !== false)
-                .map(({ label, key, minWidth }, index) => (
+                .map(({ label, key, minWidth }, index, filteredArray) => (
                   <StyledHeadCell
                     key={key}
                     sx={{
                       width: minWidth,
                       minWidth: minWidth,
-                      position: index === 0 || index === columns.length - 1 ? 'sticky' : 'static',
+                      position: index === 0 || index === filteredArray.length - 1 ? 'sticky' : 'static',
                       left: index === 0 ? 0 : 'auto',
-                      right: index === columns.length - 1 ? 0 : 'auto',
-                      zIndex: index === 0 || index === columns.length - 1 ? 2 : 'auto',
+                      right: index === filteredArray.length - 1 ? 0 : 'auto',
+                      zIndex: index === 0 || index === filteredArray.length - 1 ? 2 : 'auto',
                       backdropFilter: 'blur(50px)',
                       whiteSpace: 'nowrap',
                     }}

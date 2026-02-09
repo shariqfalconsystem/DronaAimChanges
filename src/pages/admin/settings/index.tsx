@@ -206,8 +206,27 @@ const ChangeSetting = () => {
   return (
     <Box>
       <ChangeSettingHeader />
-      <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: '#F5F5F5', alignItems: 'flex-start', mt: 1 }}>
-        <List sx={{ backgroundColor: '#DFE8F0', p: 3, borderRadius: 2, ml: 2, mt: 4 }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          minHeight: '100vh',
+          bgcolor: '#F5F5F5',
+          alignItems: 'flex-start',
+          mt: 1,
+        }}
+      >
+        <List
+          sx={{
+            backgroundColor: '#DFE8F0',
+            p: 3,
+            borderRadius: 2,
+            ml: { xs: 2, md: 2 },
+            mt: 4,
+            width: { xs: 'calc(100% - 32px)', md: 'auto' },
+            minWidth: '250px',
+          }}
+        >
           <ListItem
             sx={{
               mb: 3,
@@ -231,13 +250,15 @@ const ChangeSetting = () => {
         <Paper
           sx={{
             position: 'relative',
-            width: '960px',
+            flex: 1,
+            width: { xs: 'calc(100% - 32px)', md: 'auto' },
+            maxWidth: '100%',
+            minHeight: '800px',
             borderRadius: 4,
             boxShadow: 1,
             borderRight: '1px solid',
             borderColor: 'grey.200',
-            height: '800px',
-            ml: 4,
+            ml: { xs: 2, md: 4 },
             mr: 2,
             mt: 4,
             mb: 4,

@@ -157,7 +157,7 @@ const UninsuredTripListTable = ({
       ref={containerRef}
       sx={{
         whiteSpace: 'nowrap',
-        width: '80vw',
+        width: '100%',
       }}
     >
       <TableContainer

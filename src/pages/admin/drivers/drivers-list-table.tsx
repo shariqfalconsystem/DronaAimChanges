@@ -156,7 +156,7 @@ const DriversListTable: React.FC<any> = ({
 
   return (
     <>
-      <Box sx={{ maxWidth: '81vw', overflowX: 'auto' }}>
+      <Box sx={{ width: '100%', overflowX: 'auto' }}>
         <TableContainer
           component={Paper}
           style={{ boxShadow: 'none' }}

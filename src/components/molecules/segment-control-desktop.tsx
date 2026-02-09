@@ -16,9 +16,11 @@ const HeaderContainer = styled('div')(({ theme }) => ({
   justifyContent: 'space-between',
   alignItems: 'center',
   marginBottom: 16,
-  width: '98%',
+  width: '100%',
   padding: '0 16px',
   gap: '8px',
+  boxSizing: 'border-box',
+  flexWrap: 'wrap',
 }));
 
 const FilterButton = styled(Box)(({ theme }) => ({
@@ -127,7 +129,7 @@ const SegmentControlDesktop = ({
             )}
           </Box>
         ) : (
-          <Box display="flex" flexDirection="column" alignItems="flex-start" padding="20px 10px">
+          <Box display="flex" flexDirection="column" alignItems="flex-start" padding="20px 0px">
             <Typography variant="h6" sx={{ fontSize: '1rem', fontWeight: '400' }}>
               {leftText}
             </Typography>
@@ -164,6 +166,7 @@ const SegmentControlDesktop = ({
                 height: '30px',
                 backgroundColor: '#3F5C78',
                 color: '#fff',
+                whiteSpace: 'nowrap',
                 '&:hover': {
                   color: '#000',
                 },
@@ -182,6 +185,7 @@ const SegmentControlDesktop = ({
                 height: '30px',
                 backgroundColor: '#3F5C78',
                 color: '#fff',
+                whiteSpace: 'nowrap',
                 '&:hover': {
                   color: '#000',
                 },
@@ -320,6 +324,7 @@ const SegmentControlDesktop = ({
                 height: '30px',
                 backgroundColor: '#3F5C78',
                 color: '#fff',
+                whiteSpace: 'nowrap',
                 '&:hover': {
                   color: '#000',
                 },
@@ -338,6 +343,7 @@ const SegmentControlDesktop = ({
                 height: '30px',
                 backgroundColor: '#3F5C78',
                 color: '#fff',
+                whiteSpace: 'nowrap',
                 '&:hover': {
                   color: '#000',
                 },

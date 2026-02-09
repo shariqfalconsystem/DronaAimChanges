@@ -244,7 +244,7 @@ const FnolListTable: React.FC<any> = ({
     Math.ceil(fnolInformation?.pageDetails?.totalRecords / fnolInformation?.pageDetails?.pageSize) || 1;
 
   return (
-    <Box sx={{ maxWidth: '81vw', overflowX: 'auto' }}>
+    <Box sx={{ width: '100%', overflowX: 'auto' }}>
       <TableContainer
         ref={containerRef}
         component={Paper}
