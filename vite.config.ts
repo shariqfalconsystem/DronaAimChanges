@@ -57,6 +57,8 @@ export default defineConfig({
     port: 5173,
     headers: {
       'Service-Worker-Allowed': '/',
+      // CSP with frame-ancestors (not supported in meta tags)
+      'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com https://*.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://maps.googleapis.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://*.amazonaws.com https://*.amplifyapp.com wss://*.amazonaws.com https://maps.googleapis.com; frame-src 'self' https://app.powerbi.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;",
     },
   },
   build: {
