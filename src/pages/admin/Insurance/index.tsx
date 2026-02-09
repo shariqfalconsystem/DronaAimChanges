@@ -52,7 +52,7 @@ const InsuranceProvider: React.FC = () => {
     { label: 'Total Devices', key: 'numberOfDevices', minWidth: '100px', hideable: true },
     { label: 'Total Drivers', key: 'numberOfDrivers', minWidth: '100px', hideable: true },
     { label: 'Total Users', key: 'numberOfInsurerUsers', minWidth: '100px', hideable: true },
-    { label: 'Action', key: 'actions', minWidth: '80px', hideable: false },
+    { label: 'Action', key: 'actions', minWidth: '110px', hideable: false },
   ];
 
   const itemsPerPage = 10;

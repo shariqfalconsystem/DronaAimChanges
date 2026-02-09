@@ -236,7 +236,7 @@ const DriversDetails: React.FC = () => {
           <Grid item md={12}>
             <DriverEventsChart driverId={driverId} driverLonestarId={driverLonestarId} />
           </Grid>
-          <Grid item md={12} sx={{ width: '80vw' }}>
+          <Grid item md={12} sx={{ width: '100%' }}>
             <DriverTripsList
               tripsInformation={driverTripsInformation}
               onPageChange={handlePageChange}

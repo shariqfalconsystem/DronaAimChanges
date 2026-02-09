@@ -173,7 +173,7 @@ const FleetListTable: React.FC<any> = ({
 
   return (
     <>
-      <Box sx={{ maxWidth: '81vw', overflowX: 'auto' }}>
+      <Box sx={{ width: '100%', overflowX: 'auto' }}>
         <TableContainer
           ref={containerRef}
           component={Paper}

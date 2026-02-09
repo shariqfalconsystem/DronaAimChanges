@@ -205,13 +205,13 @@ const UserManagementTable = ({
     { label: 'Organization', key: 'organization', minWidth: '150px', hideable: true },
     { label: 'Role', key: 'role', minWidth: '150px', hideable: true },
     { label: 'Status', key: 'activeStatus', minWidth: '120px', hideable: true },
-    { label: 'Action', key: 'actions', minWidth: '100px', hideable: false },
+    { label: 'Action', key: 'actions', minWidth: '110px', hideable: false },
   ];
 
   const totalPages = Math.ceil(usersInformation?.pageDetails?.totalRecords / 10) || 1;
 
   return (
-    <Box sx={{ maxWidth: '81vw', overflowX: 'auto' }}>
+    <Box sx={{ width: '100%', overflowX: 'auto' }}>
       <TableContainer
         ref={containerRef}
         component={Paper}

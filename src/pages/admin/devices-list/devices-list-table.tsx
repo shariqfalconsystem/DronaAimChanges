@@ -166,14 +166,14 @@ const DevicesListTable: React.FC<any> = ({
     { label: 'Vehicle ID', key: 'vehicleId', minWidth: '95px', hideable: true },
     { label: 'VIN', key: 'vin', minWidth: '130px', hideable: true },
     { label: 'Device Snapshots', key: 'snapshot', minWidth: '110px', hideable: false },
-    { label: 'Action', key: 'actions', minWidth: '80px', hideable: false },
+    { label: 'Action', key: 'actions', minWidth: '110px', hideable: false },
   ];
 
   const totalPages =
     Math.ceil(deviceInformation?.pageDetails?.totalRecords / deviceInformation?.pageDetails?.pageSize) || 1;
 
   return (
-    <Box sx={{ maxWidth: '81vw', overflowX: 'auto' }}>
+    <Box sx={{ width: '100%', overflowX: 'auto' }}>
       <TableContainer
         ref={containerRef}
         component={Paper}
@@ -213,6 +213,7 @@ const DevicesListTable: React.FC<any> = ({
                       right: index === filteredArray.length - 1 ? 0 : 'auto',
                       zIndex: index === 0 || index === filteredArray.length - 1 ? 2 : 'auto',
                       backdropFilter: applyBackdropFilter ? 'blur(50px)' : 'none',
+                      background: index === 0 || index === filteredArray.length - 1 ? '#EDF0F5' : 'inherit',
                       boxShadow:
                         index === 0
                           ? '2px 0 5px rgba(0,0,0,0.1)'

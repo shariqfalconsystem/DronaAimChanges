@@ -108,7 +108,7 @@ const MileageListTable: React.FC<any> = ({
     Math.ceil(mileageInformation?.pageDetails?.totalRecords / mileageInformation?.pageDetails?.pageSize) || 1;
 
   return (
-    <Box sx={{ maxWidth: '81.8vw', overflowX: 'auto' }}>
+    <Box sx={{ width: '100%', overflowX: 'auto' }}>
       <TableContainer
         ref={containerRef}
         component={Paper}

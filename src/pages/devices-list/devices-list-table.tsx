@@ -137,7 +137,7 @@ const DevicesListTable: React.FC<any> = ({
     Math.ceil(deviceInformation?.pageDetails?.totalRecords / deviceInformation?.pageDetails?.pageSize) || 1;
 
   return (
-    <Box sx={{ maxWidth: '81vw', overflowX: 'auto' }}>
+    <Box sx={{ width: '100%', overflowX: 'auto' }}>
       <TableContainer
         ref={containerRef}
         component={Paper}
@@ -176,6 +176,7 @@ const DevicesListTable: React.FC<any> = ({
                       right: index === filteredArray.length - 1 ? 0 : 'auto',
                       zIndex: index === 0 || index === filteredArray.length - 1 ? 2 : 'auto',
                       backdropFilter: applyBackdropFilter ? 'blur(50px)' : 'none',
+                      background: index === 0 || index === filteredArray.length - 1 ? '#EDF0F5' : 'inherit',
                       boxShadow:
                         index === 0
                           ? '2px 0 5px rgba(0,0,0,0.1)'
@@ -292,7 +293,7 @@ const DevicesListTable: React.FC<any> = ({
                               ? '#FFF8ED'
                               : applyBackdropFilter
                                 ? '#f5f5f5'
-                                : 'inherit',
+                                : (index === 0 || index === filteredArray.length - 1) ? '#fff' : 'inherit',
                           boxShadow:
                             index === 0
                               ? '2px 0 5px rgba(0,0,0,0.1)'

@@ -159,14 +159,14 @@ const UnassignedListTable: React.FC<any> = ({
     { label: 'Vehicle ID', key: 'vehicleId', minWidth: '100px', hideable: true },
     { label: 'VIN', key: 'vin', minWidth: '140px', hideable: true },
     { label: 'Device Snapshots', key: 'snapshot', minWidth: '110px', hideable: false },
-    { label: 'Action', key: 'actions', minWidth: '90px', hideable: false },
+    { label: 'Action', key: 'actions', minWidth: '110px', hideable: false },
   ];
 
   const totalPages =
     Math.ceil(deviceInformation?.pageDetails?.totalRecords / deviceInformation?.pageDetails?.pageSize) || 1;
 
   return (
-    <Box sx={{ maxWidth: '81vw', overflowX: 'auto' }}>
+    <Box sx={{ width: '100%', overflowX: 'auto' }}>
       <TableContainer
         ref={containerRef}
         component={Paper}
@@ -195,17 +195,18 @@ const UnassignedListTable: React.FC<any> = ({
             <TableRow>
               {columns
                 .filter((col) => !visibleColumns || (visibleColumns as any)[col.key] !== false)
-                .map(({ label, key, minWidth }, index) => (
+                .map(({ label, key, minWidth }, index, filteredArray) => (
                   <StyledHeadCell
                     key={key}
                     sx={{
                       width: minWidth,
                       minWidth: minWidth,
-                      position: index === 0 || index === columns.length - 1 ? 'sticky' : 'static',
+                      position: index === 0 || index === filteredArray.length - 1 ? 'sticky' : 'static',
                       left: index === 0 ? 0 : 'auto',
-                      right: index === columns.length - 1 ? 0 : 'auto',
-                      zIndex: index === 0 || index === columns.length - 1 ? 2 : 'auto',
+                      right: index === filteredArray.length - 1 ? 0 : 'auto',
+                      zIndex: index === 0 || index === filteredArray.length - 1 ? 2 : 'auto',
                       backdropFilter: 'blur(50px)',
+                      background: index === 0 || index === filteredArray.length - 1 ? '#EDF0F5' : 'inherit',
                     }}
                   >
                     <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>

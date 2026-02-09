@@ -236,7 +236,7 @@ const Dashboard = () => {
           <Grid item xs={12}>
             <MyFleet />
           </Grid>
-          <Grid item xs={12} sx={{ width: '80vw' }}>
+          <Grid item xs={12} sx={{ width: '100%' }}>
             <TripsDashboardTable
               tripsInformation={tripsInformation}
               onPageChange={handlePageChange}

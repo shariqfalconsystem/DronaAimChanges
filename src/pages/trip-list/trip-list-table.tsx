@@ -160,7 +160,7 @@ const TripListTable = ({
       ref={containerRef}
       sx={{
         whiteSpace: 'nowrap',
-        width: '81vw',
+        width: '100%',
       }}
     >
       <TableContainer

@@ -184,8 +184,8 @@ const FleetDetails: React.FC = () => {
         const vehicleStatus = DriverFilterCriteria?.active
           ? 'assigned'
           : DriverFilterCriteria?.inactive
-          ? 'unassigned'
-          : undefined;
+            ? 'unassigned'
+            : undefined;
 
         const requestBody: any = {
           ...params,
@@ -381,7 +381,7 @@ const FleetDetails: React.FC = () => {
           <FleetPersonnel
             personnelInformation={FleetPersonnelData}
             onPageChange={handlePageChange}
-            fetchData={() => {}}
+            fetchData={() => { }}
           />
         );
       case 'documents':
@@ -513,7 +513,7 @@ const FleetDetails: React.FC = () => {
           </Grid>
         </Grid>
         <Grid container spacing={3} sx={{ marginTop: 5 }}>
-          <Grid item md={12} id="vehicle-trip-details" sx={{ width: '80vw' }}>
+          <Grid item md={12} id="vehicle-trip-details" sx={{ width: '100%' }}>
             <Box
               sx={{
                 borderTop: '1px solid #ccc',
