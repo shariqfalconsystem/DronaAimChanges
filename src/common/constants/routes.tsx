@@ -69,4 +69,5 @@ export enum paths {
   ADMINTRIPDETAILS = '/admin/trips-details',
   ADMINDRIVERS = '/admin/drivers',
   ADMINDRIVERSDETAILS = '/admin/drivers-details',
+  ANALYTICS = '/analytics',
 }

@@ -11,6 +11,7 @@ import driver from '../../../assets/icons/driver.png';
 import event from '../../../assets/icons/event.png';
 import settings from '../../../assets/icons/settings-icon.png';
 import documentCenter from '../../../assets/icons/documentCenter.png';
+import trend from '../../../assets/icons/trend.png';
 
 export const fmList = [
   {
@@ -162,6 +163,21 @@ export const fmList = [
       />
     ),
     text: 'Reports',
+  },
+  {
+    key: '/analytics',
+    icon: <img src={trend} height={30} width={30} color="white" className="report-icon" />,
+    selectedIcon: (
+      <img
+        src={trend}
+        height={30}
+        width={30}
+        color="black"
+        className="report-icon"
+        style={{ filter: 'invert(1) brightness(2)' }}
+      />
+    ),
+    text: 'Analytics',
   },
 ];
 
@@ -315,6 +331,21 @@ export const SuperFmList = [
       />
     ),
     text: 'Reports',
+  },
+  {
+    key: '/analytics',
+    icon: <img src={trend} height={30} width={30} color="white" className="report-icon" />,
+    selectedIcon: (
+      <img
+        src={trend}
+        height={30}
+        width={30}
+        color="black"
+        className="report-icon"
+        style={{ filter: 'invert(1) brightness(2)' }}
+      />
+    ),
+    text: 'Analytics',
   },
   {
     key: 'user-management',
