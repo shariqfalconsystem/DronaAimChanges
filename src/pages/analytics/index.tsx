@@ -6,13 +6,13 @@ function Analytics() {
 
 
     return (
-        <div className="App" style={{ height: '100vh', width: '100%' }}>
+        <div className="App" style={{ height: 'calc(100vh - 64px)', width: '100%', overflow: 'hidden' }}>
             <iframe
                 width="100%"
                 height="100%"
                 seamless
                 frameBorder="0"
-                scrolling="no"
+                scrolling="auto"
                 src="http://localhost:8088/superset/dashboard/p/L03YNVwYoya/"
             >
             </iframe>
