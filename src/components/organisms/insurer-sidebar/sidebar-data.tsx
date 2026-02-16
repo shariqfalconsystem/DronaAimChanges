@@ -7,6 +7,7 @@ import fleets from '../../../assets/icons/total-vehicles.png';
 import dashboard from '../../../assets/icons/dashboard.png';
 import users from '../../../assets/icons/users.png';
 import settings from '../../../assets/icons/settings-icon.png';
+import trend from '../../../assets/icons/trend.png';
 
 export const insurerList = [
   {
@@ -113,6 +114,20 @@ export const insurerList = [
       />
     ),
     text: 'Reports',
+  },
+  {
+    key: 'analytics',
+    icon: <img src={trend} height={30} width={30} color="white" className="reports-icon" />,
+    selectedIcon: (
+      <img
+        src={trend}
+        color="black"
+        style={{ filter: 'invert(1) brightness(2)' }}
+        width={30}
+        height={30}
+      />
+    ),
+    text: 'Analytics',
   },
 ];
 
@@ -221,6 +236,20 @@ export const superInsurerList = [
       />
     ),
     text: 'Reports',
+  },
+  {
+    key: 'analytics',
+    icon: <img src={trend} height={30} width={30} color="white" className="reports-icon" />,
+    selectedIcon: (
+      <img
+        src={trend}
+        color="black"
+        style={{ filter: 'invert(1) brightness(2)' }}
+        width={30}
+        height={30}
+      />
+    ),
+    text: 'Analytics',
   },
   {
     key: 'insurer/user-management',

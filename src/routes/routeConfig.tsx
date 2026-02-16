@@ -12,6 +12,7 @@ const Profile = React.lazy(() => import('../pages/profile'));
 const ForgotPassword = React.lazy(() => import('../pages/forgot-password'));
 const ResetPassword = React.lazy(() => import('../pages/reset-password'));
 const NotFoundPage = React.lazy(() => import('../pages/not-found'));
+const Analytics = React.lazy(() => import('../pages/analytics'));
 
 //Admin routes
 const AdminHome = React.lazy(() => import('../pages/admin/user-management'));
@@ -185,6 +186,7 @@ export default function routeConfig() {
               <Route element={<PrivateRoute />}>
                 <Route element={<MainRoutes />}>
                   <Route path={paths.PROFILE} element={<Profile />} />
+                  <Route path={paths.ANALYTICS} element={<Analytics />} />
                   <Route path={`${paths.TRIPDETAILS}/:tripId`} element={<TripDetails />} />
                   <Route path={paths.NOTIFICATIONSCREEN} element={<NotificationsScreen />} />
                 </Route>
