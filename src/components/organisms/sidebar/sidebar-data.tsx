@@ -11,7 +11,7 @@ import driver from '../../../assets/icons/driver.png';
 import event from '../../../assets/icons/event.png';
 import settings from '../../../assets/icons/settings-icon.png';
 import documentCenter from '../../../assets/icons/documentCenter.png';
-import trend from '../../../assets/icons/trend.png';
+import { RiLineChartLine } from '@remixicon/react';
 
 export const fmList = [
   {
@@ -166,17 +166,8 @@ export const fmList = [
   },
   {
     key: '/analytics',
-    icon: <img src={trend} height={30} width={30} color="white" className="report-icon" />,
-    selectedIcon: (
-      <img
-        src={trend}
-        height={30}
-        width={30}
-        color="black"
-        className="report-icon"
-        style={{ filter: 'invert(1) brightness(2)' }}
-      />
-    ),
+    icon: <RiLineChartLine size={30} color="white" className="report-icon" />,
+    selectedIcon: <RiLineChartLine size={30} color="black" className="report-icon" />,
     text: 'Analytics',
   },
 ];
@@ -334,17 +325,8 @@ export const SuperFmList = [
   },
   {
     key: '/analytics',
-    icon: <img src={trend} height={30} width={30} color="white" className="report-icon" />,
-    selectedIcon: (
-      <img
-        src={trend}
-        height={30}
-        width={30}
-        color="black"
-        className="report-icon"
-        style={{ filter: 'invert(1) brightness(2)' }}
-      />
-    ),
+    icon: <RiLineChartLine size={30} color="white" className="report-icon" />,
+    selectedIcon: <RiLineChartLine size={30} color="black" className="report-icon" />,
     text: 'Analytics',
   },
   {

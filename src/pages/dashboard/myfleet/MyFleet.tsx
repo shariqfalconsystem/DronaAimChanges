@@ -1,6 +1,6 @@
 import { Box, Button, ButtonGroup, FormControl, Grid, MenuItem, Select, Typography } from '@mui/material';
 import PieChartComponent from './PieChart';
-import TrendIcon from '../../../assets/icons/trend.png';
+import { RiLineChartLine } from '@remixicon/react';
 import SafetyIcon from '../../../assets/icons/overall-safety.png';
 import { DatePicker } from 'antd';
 import { useMemo, useState } from 'react';
@@ -586,7 +586,7 @@ const MyFleet = () => {
             >
               <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Box sx={{ ml: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                  <img src={TrendIcon} alt="violations-overall" />
+                  <RiLineChartLine size={25} color="#0A4D7C" />
                 </Box>
                 <Typography variant="body1" sx={{ ml: 1 }}>
                   TREND

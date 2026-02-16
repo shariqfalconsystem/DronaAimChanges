@@ -13,7 +13,7 @@ function Analytics() {
                 seamless
                 frameBorder="0"
                 scrolling="auto"
-                src="http://localhost:8088/superset/dashboard/p/L03YNVwYoya/"
+                src="http://localhost:8088/superset/dashboard/p/XEb036b3Dlw/"
             >
             </iframe>
         </div>

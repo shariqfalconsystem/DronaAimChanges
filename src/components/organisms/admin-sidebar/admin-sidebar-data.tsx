@@ -6,7 +6,7 @@ import vehicle from '../../../assets/icons/total-vehicles.png';
 import devices from '../../../assets/icons/total-devices.png';
 import driver from '../../../assets/icons/driver.png';
 import trips from '../../../assets/icons/trips.png';
-import trend from '../../../assets/icons/trend.png';
+import { RiLineChartLine } from '@remixicon/react';
 
 export const homeList = [
   {
@@ -132,17 +132,8 @@ export const homeList = [
   },
   {
     key: '/analytics',
-    icon: <img src={trend} height={30} width={30} color="white" className="users-icon" />,
-    selectedIcon: (
-      <img
-        src={trend}
-        height={30}
-        width={30}
-        color="black"
-        className="users-icon"
-        style={{ filter: 'invert(1) brightness(2)' }}
-      />
-    ),
+    icon: <RiLineChartLine size={30} color="white" className="users-icon" />,
+    selectedIcon: <RiLineChartLine size={30} color="black" className="users-icon" />,
     text: 'Analytics',
   },
 ];
