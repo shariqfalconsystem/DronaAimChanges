@@ -55,12 +55,12 @@ function Analytics() {
                 fetchGuestToken: () => Promise.resolve(deviceConfig.token),
                 dashboardUiConfig: {
                     hideTitle: true,
-                    hideChartControls: false, // keep false to allow download
-                    hideTab: true,
+                    hideChartControls: false, // allow download
+                    hideTabs: true,            // note: should be hideTabs, not hideTab
                     filters: {
-                        expanded: false,
-                        visible: true
-                    }
+                        expanded: true,           // ✅ expand filter panel
+                        visible: true             // ✅ render filters
+                    },
                 },
             });
             setLoading(false);
