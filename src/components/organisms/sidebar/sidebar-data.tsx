@@ -165,6 +165,21 @@ export const fmList = [
     text: 'Reports',
   },
   {
+    key: 'reporting',
+    icon: <img src={reports} height={30} width={30} color="white" className="report-icon" />,
+    selectedIcon: (
+      <img
+        src={reports}
+        height={30}
+        width={30}
+        color="black"
+        className="report-icon"
+        style={{ filter: 'invert(1) brightness(2)' }}
+      />
+    ),
+    text: 'Reporting',
+  },
+  {
     key: '/analytics',
     icon: <img src={trend} height={30} width={30} color="white" className="report-icon" />,
     selectedIcon: (

@@ -52,6 +52,7 @@ const Ifta = React.lazy(() => import('../pages/ifta'));
 const FMHELPCENTER = React.lazy(() => import('../pages/help-center'));
 const FMHelpCenterViewContent = React.lazy(() => import('../pages/help-center'));
 const DocumentCenter = React.lazy(() => import('../pages/documentcenter'));
+const FMReportingScreen = React.lazy(() => import('../pages/reporting'));
 
 // Insurer routes
 const InsurerDashboard = React.lazy(() => import('../pages/insurer/dashboard'));
@@ -140,6 +141,7 @@ export default function routeConfig() {
                   <Route path={paths.DASHBOARDSETTINGS} element={<DashboardSetting />} />
                   <Route path={paths.SUPPORTSCREEN} element={<SupportScreen />} />
                   <Route path={paths.FMREPORTSSCREEN} element={<FMReportsScreen />} />
+                  <Route path={paths.REPORTING} element={<FMReportingScreen />} />
                   <Route path={paths.FMCREATEREPORT} element={<FmCreateReport />} />
                   <Route path={paths.USERMANAGEMENT} element={<UserManagement />} />
                   <Route path={paths.IFTA} element={<Ifta />} />

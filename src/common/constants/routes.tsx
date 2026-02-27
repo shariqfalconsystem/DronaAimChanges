@@ -70,4 +70,5 @@ export enum paths {
   ADMINDRIVERS = '/admin/drivers',
   ADMINDRIVERSDETAILS = '/admin/drivers-details',
   ANALYTICS = '/analytics',
+  REPORTING = '/reporting',
 }
